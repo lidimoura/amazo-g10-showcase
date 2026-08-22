@@ -168,3 +168,27 @@ Após aprovação explícita da Lídi, foi criado o repositório público [`lidi
 Durante a validação, a primeira versão publicada revelou que o roteador cliente não respeitava o caminho base do Pages. O roteamento foi corrigido para usar a base de Vite quando `GITHUB_PAGES=true`; os builds local e estático foram executados novamente, e a publicação corrigida passou a carregar a rota inicial corretamente.
 
 O README de `amazo-guia-g10` recebeu uma referência curta ao showcase e foi corrigido de Hub OS NEXUS para Hub OS. Nenhum código do MVP RAG foi incorporado à LP; os repositórios permanecem separados por finalidade.
+
+## 2026-08-22 — Autonomia editorial, fontes RAG e correção do Hub OS
+
+### Retornos da CEO incorporados
+
+Por solicitação da Lídi, foram removidos dos retratos da Amazô os rótulos “retrato documentado · peito limpo”, carimbos de arquivo e a menção a “ilustração aprovada”. A imagem permanece como identidade visual, sem transformar uma decisão estética em alegação técnica.
+
+### Correção de layout
+
+A quebra da seção **Hub OS como método** ocorreu porque as classes públicas foram renomeadas, enquanto as regras estruturais no CSS-base ainda usavam os seletores antigos. O bloco foi reconstruído com uma grade explícita de quatro cartões — Diagnóstico, Arquitetura, Desenvolvimento e QA + entrega — que muda para duas colunas e depois uma coluna em telas menores. Desktop e mobile foram revisados após o ajuste.
+
+### O que “Caderno de Campo” significa nesta LP
+
+“Caderno de Campo” é uma **metáfora editorial**, não uma ferramenta externa, painel de monitoramento ou base de dados. Ele organiza visualmente três leituras para o visitante: o que já foi decidido, o que está em validação e o que ainda é proposta. A CEO continua sendo a autoridade sobre conteúdo, fonte, aprovação e publicação.
+
+### Fontes de pesquisa versus fontes de verdade
+
+Materiais e ferramentas de pesquisa permanecem internos. A LP não expõe links, contagens, conteúdos ou detalhes de processo criativo. Só podem entrar no RAG documentos aprovados, versionados, com responsável e finalidade de resposta. O catálogo nominal depende da seleção explícita da Lídi.
+
+## 2026-08-22 — Catálogo público de fonte de verdade
+
+Por decisão da Lídi, o showcase deixou de exibir qualquer contagem ou referência ao acervo interno usado no processo criativo do Challenge. A seção **Catálogo e evidências** agora descreve exclusivamente a fonte de verdade em construção para a Amazô: índice e governança; trajetória; Encontro d’Água Hub; Hub OS; produtos; serviços; regras de negócio; processos; e portfólio.
+
+A página explica o contrato mínimo de entrada — documento aprovado, versão, responsável e finalidade de resposta — e exclui CRM, dados pessoais, material de pesquisa e conteúdo confidencial. A lista nominal de arquivos permanece sob aprovação da CEO, antes de qualquer ingestão no RAG ou divulgação pública.

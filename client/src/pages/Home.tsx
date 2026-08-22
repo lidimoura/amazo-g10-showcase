@@ -33,6 +33,7 @@ import "./evidence-artifacts.css";
 import "./hub-logo.css";
 import "./field-artifacts.css";
 import "./ecosystem-links.css";
+import "./rag-sources.css";
 
 const publicAsset = (filename: string, manusStoragePath: string) =>
   import.meta.env.VITE_PUBLIC_EXPORT === "true" ? `${import.meta.env.BASE_URL}assets/${filename}` : manusStoragePath;
@@ -48,6 +49,15 @@ const assets = {
 };
 
 const evidenceItems = [
+  {
+    id: "sources",
+    kicker: "CATÁLOGO / FONTES RAG",
+    title: "Base autorizada, não acervo inteiro",
+    description:
+      "A Amazô consultará somente documentos de verdade em construção para a trajetória, o Hub, o Hub OS, as ofertas e os processos. Cada entrada precisa de versão, responsável e autorização da Lídi.",
+    status: "Curadoria humana em andamento",
+    icon: BookOpen,
+  },
   {
     id: "agent",
     kicker: "EVIDÊNCIA 01",
@@ -241,14 +251,10 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <div className="hero-showcase-stack">
-              <div className="hero-amazo-portrait" aria-hidden="true">
-                <img src={assets.amazoHero} alt="" />
-                <div className="portrait-field-caption">
-                  <span>ARQ 01 · ATIVO L1</span>
-                  <strong>retrato documentado · peito limpo</strong>
+              <div className="hero-showcase-stack">
+                <div className="hero-amazo-portrait" aria-hidden="true">
+                  <img src={assets.amazoHero} alt="" />
                 </div>
-              </div>
               <motion.aside
                 className="field-note"
                 initial={{ opacity: 0, y: 22 }}
@@ -305,10 +311,10 @@ export default function Home() {
           </div>
           <div className="metric-grid">
             <article className="metric-card metric-card-strong">
-              <span className="metric-eyebrow">FONTE CATALOGADA</span>
-              <strong>14</strong>
-              <p>fontes classificadas no notebook do Challenge G10.</p>
-              <span className="metric-proof">Evidência disponível</span>
+              <span className="metric-eyebrow">CATÁLOGO EM CONSTRUÇÃO</span>
+              <strong>09</strong>
+              <p>núcleos documentais previstos para a fonte de verdade da Amazô.</p>
+              <span className="metric-proof">Curadoria sob aprovação da CEO</span>
             </article>
             <article className="metric-card">
               <span className="metric-eyebrow">ARQUITETURA PROPOSTA</span>
@@ -365,8 +371,7 @@ export default function Home() {
               <div className="map-note">O agente declara ausência de evidência quando a base não sustenta a pergunta.</div>
             </div>
             <div className="atlas-card">
-              <img src={assets.amazoFlow} alt="Ilustração da Amazô conduzindo um fluxo abstrato de dados e água, versão visual do Challenge G10" />
-              <span className="atlas-asset-note">ARQ 03 · fluxo de método</span>
+              <img src={assets.amazoFlow} alt="" aria-hidden="true" />
               <div className="atlas-card-copy">
                 <span>origem / amazô</span>
                 <strong>Conhecimento também se cultiva.</strong>
@@ -377,13 +382,13 @@ export default function Home() {
         </section>
 
         <section id="evidencias" className="evidence-section">
-          <RouteMarker code="03" label="trilha de evidência" />
+          <RouteMarker code="03" label="fontes e evidências" />
           <div className="evidence-heading">
             <div>
-              <SectionLabel>Galeria de evidências</SectionLabel>
-              <h2>O portfólio só ganha valor quando mostra o caminho.</h2>
+              <SectionLabel>Catálogo e evidências</SectionLabel>
+              <h2>O RAG só responde com o que foi autorizado.</h2>
             </div>
-            <p>Os espaços abaixo foram preparados para receber prints, vídeos e registros de teste depois da sua curadoria e da aprovação de publicação.</p>
+            <p>Esta área separa a pesquisa que orienta o projeto dos documentos que poderão se tornar fonte de verdade do agente. Prints, vídeo e testes entram depois da sua curadoria e aprovação de publicação.</p>
           </div>
 
           <div className="evidence-workbench">
@@ -411,9 +416,9 @@ export default function Home() {
               <img className="evidence-amazo-portrait" src={assets.amazoProcess} alt="" aria-hidden="true" />
               <div className="evidence-stage-wash" />
               <aside className="evidence-audit-strip" aria-label="Índice de artefatos de validação">
-                <span>BASE / 14 fontes</span>
+                <span>BASE / 09 núcleos</span>
+                <span>REGRA / versão + responsável</span>
                 <span>QA / roteiro definido</span>
-                <span>PROVA / curadoria pendente</span>
               </aside>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -428,6 +433,20 @@ export default function Home() {
                   <activeEvidence.icon size={30} strokeWidth={1.5} />
                   <h3>{activeEvidence.title}</h3>
                   <p>{activeEvidence.description}</p>
+                  {activeEvidence.id === "sources" && (
+                    <>
+                      <div className="rag-source-catalog" aria-label="Núcleos da fonte de verdade em construção">
+                        <div><span>01–03</span><strong>Identidade</strong><small>trajetória, Hub e Hub OS</small></div>
+                        <div><span>04–06</span><strong>Oferta</strong><small>produtos, serviços e regras</small></div>
+                        <div><span>07–08</span><strong>Operação</strong><small>processos e portfólio</small></div>
+                        <div><span>00</span><strong>Governança</strong><small>índice, status e política de atualização</small></div>
+                      </div>
+                      <ul className="rag-source-scope" aria-label="Regras públicas das fontes do RAG">
+                        <li><strong>Entra:</strong> somente documento aprovado, com versão, responsável e finalidade de resposta.</li>
+                        <li><strong>Fica fora:</strong> CRM, dados pessoais, material de pesquisa e conteúdo confidencial.</li>
+                      </ul>
+                    </>
+                  )}
                   <div className="stage-status"><span />{activeEvidence.status}</div>
                   <button className="stage-placeholder" type="button">
                     <CirclePlay size={17} /> Área reservada para mídia aprovada
@@ -435,10 +454,10 @@ export default function Home() {
                 </motion.div>
               </AnimatePresence>
               <aside className="evidence-method-artifact" aria-label="Registro de validação disponível">
-                <span>registro / validação</span>
-                <strong>Base catalogada</strong>
-                <p>14 fontes classificadas no notebook do G10.</p>
-                <small>Próximo artefato: pergunta, fonte recuperada e decisão de resposta.</small>
+                <span>governança / rag</span>
+                <strong>Fonte de verdade</strong>
+                <p>Documentos permitidos, com dono, versão e finalidade de uso.</p>
+                <small>Próximo artefato: catálogo aprovado, pergunta, fonte recuperada e decisão de resposta.</small>
               </aside>
               <div className="evidence-crop-note"><CameraIcon /> print · vídeo · log de teste</div>
             </div>
@@ -482,13 +501,8 @@ export default function Home() {
           <div className="trajectory-composition">
             <figure className="amazo-portrait-card">
               <div className="portrait-frame">
-                <img src={assets.amazoHero} alt="Ilustração digital da Amazô, representante do Encontro d’Água Hub" />
-                <span className="portrait-archive-stamp">ARQ 04<br />L1 / HERO</span>
+                <img src={assets.amazoHero} alt="Representação digital da Amazô, representante do Encontro d’Água Hub" />
               </div>
-              <figcaption>
-                <span>registro visual / ilustração aprovada</span>
-                <strong>tecnologia cultivada, não extraída</strong>
-              </figcaption>
             </figure>
 
             <div className="trajectory-copy">

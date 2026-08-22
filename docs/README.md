@@ -11,6 +11,7 @@ Esta pasta concentra os artefatos de decisão, evidência e manutenção da land
 | [`CHALLENGE_G10_PARTICIPATION_GUIDANCE.md`](./CHALLENGE_G10_PARTICIPATION_GUIDANCE.md) | Parecer de orientação sobre autoria humana, IA-Native e participação no G10. |
 | [`LINKS_ECOSSISTEMA.md`](./LINKS_ECOSSISTEMA.md) | Registro dos links públicos, escopos e restrições de visibilidade do ecossistema. |
 | [`GITHUB_PAGES_PUBLICATION_PLAN.md`](./GITHUB_PAGES_PUBLICATION_PLAN.md) | Estratégia de repositório, exportação estática e publicação futura no GitHub Pages. |
+| [`RAG_SOURCE_GOVERNANCE.md`](./RAG_SOURCE_GOVERNANCE.md) | Regra pública de curadoria para distinguir pesquisa classificada, fonte de verdade e dado operacional. |
 
 ## Convenções
 

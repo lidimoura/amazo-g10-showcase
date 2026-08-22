@@ -164,3 +164,20 @@
 - [x] Substituir referências a “Hub OS NEXUS” por “Hub OS” na LP e na documentação do showcase.
 - [x] Atualizar o repositório de referência para `https://github.com/lidimoura/Hub_OS`.
 - [x] Validar a correção em build, links e responsividade antes de retomar a publicação externa.
+
+## Correções de autonomia, fontes e layout
+
+- [x] Remover rótulos visuais dos retratos da Amazô e qualquer menção pública a “ilustração aprovada”.
+- [x] Corrigir a seção “Hub OS como método” para restaurar espaçamento, hierarquia e responsividade.
+- [x] Substituir a narrativa de “trilha de evidências” por uma explicação de catálogo documental autorizado, com fontes do RAG e critérios de inclusão compreensíveis.
+- [x] Registrar as ferramentas de curadoria apenas como processos internos, sem link ou exposição pública.
+- [x] Validar desktop/mobile, build e compreensão das decisões antes de publicar atualização no GitHub Pages.
+- [ ] Definir e aprovar o catálogo nominal de documentos que realmente entrarão como fonte de verdade do RAG antes de expô-lo publicamente.
+
+## Catálogo público de fontes de verdade
+
+- [x] Remover da LP toda contagem ou referência às fontes internas de pesquisa do Challenge.
+- [x] Apresentar somente as categorias da fonte de verdade em construção: trajetória, Hub, Hub OS, produtos, serviços, regras de negócio, processos e portfólio.
+- [x] Explicar os metadados mínimos de cada documento sem expor arquivos, credenciais, CRM ou conteúdo confidencial.
+- [x] Preservar as ferramentas internas de curadoria sem links nem detalhes de processo criativo na LP.
+- [x] Validar o novo catálogo em desktop e mobile antes de solicitar aprovação para atualizar o GitHub Pages.
