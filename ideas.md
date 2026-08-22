@@ -1,0 +1,1 @@
+/home/ubuntu/challenge-g10-showcase/docs/IDEAS.md

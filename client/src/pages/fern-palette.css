@@ -1,0 +1,42 @@
+/* Style direction: Caderno de Campo Fluido — paleta samambaia com terra escura, folha média, lima viva, rosa mineral e vinho profundo. */
+:root {
+  --fern-soil: #391e13;
+  --fern-leaf: #648d3c;
+  --fern-lime: #d7f993;
+  --fern-petal: #d9aaa1;
+  --fern-wine: #3e2128;
+}
+
+html, body { background: var(--fern-soil); }
+body { color: #fff5e8; }
+.site-header { border-bottom-color: rgb(215 249 147 / 20%); background: rgb(57 30 19 / 91%); }
+.brand-lockup small, .main-nav { color: #f2d8cb; }
+.main-nav a:hover { color: var(--fern-lime); }
+.header-cta { color: var(--fern-lime); }
+.header-cta:hover { color: #fff5e8; }
+.brand-avatar { border-color: var(--fern-lime); background: var(--fern-wine); box-shadow: 0 0 0 3px rgb(215 249 147 / 13%); }
+
+.hero-section.hero-amazo { background-color: var(--fern-wine); background-image: radial-gradient(circle at 78% 20%, rgb(100 141 60 / 57%), transparent 28%), linear-gradient(118deg, #391e13 0%, #3e2128 58%, #648d3c 120%); }
+.hero-section.hero-amazo .hero-overlay { background: linear-gradient(90deg, rgb(57 30 19 / 98%) 0%, rgb(62 33 40 / 92%) 50%, rgb(62 33 40 / 49%) 100%); }
+.hero-section.hero-amazo::after { opacity: 0.46; background-image: repeating-radial-gradient(ellipse at 94% 38%, transparent 0 20px, rgb(215 249 147 / 36%) 21px 22px, transparent 24px 40px); }
+.hero-flow path { stroke: var(--fern-lime); }.hero-flow circle { fill: var(--fern-petal); stroke: var(--fern-lime); }
+.hero-copy h1 em { color: var(--fern-lime); }.hero-lede { color: #f2d8cb; }.section-label { color: #e2c9bd; }.section-label-dot { background: var(--fern-lime); }
+.button-primary { background: var(--fern-lime); color: var(--fern-soil); }.button-primary:hover { background: #efffbe; }.button-text { color: var(--fern-petal); }.hero-status { color: #ecd5ca; }.pulse-dot { background: var(--fern-lime); box-shadow: 0 0 0 5px rgb(215 249 147 / 17%); }
+.hero-amazo-portrait { border-color: var(--fern-lime); background: var(--fern-wine); box-shadow: -28px 30px 0 rgb(57 30 19 / 36%); }.hero-amazo-portrait span { color: var(--fern-lime); }.hero-amazo .field-note { border-color: rgb(215 249 147 / 46%); background: rgb(62 33 40 / 84%); }.field-note-top { color: #e8c9bd; }.field-note-lead { color: #fff5e8; }.field-note ul { color: #f1dcd3; }.field-note li svg { color: var(--fern-lime); }.field-note-footer span { color: #e8c9bd; }.field-note-footer strong { color: var(--fern-lime); }
+
+.intro-section, .architecture-section { background: var(--fern-petal); color: var(--fern-wine); }.intro-section .section-label, .architecture-section .section-label { color: #5a4223; }.intro-section .section-label-dot, .architecture-section .section-label-dot { background: var(--fern-leaf); }.page-rail { color: #6a492c; }.page-rail i { background: linear-gradient(var(--fern-leaf), transparent); }.intro-body p, .architecture-heading p { color: #5e3f43; }.inline-link { color: #4a642b; }
+
+.signal-section.signal-amazo { background-color: var(--fern-leaf); background-image: radial-gradient(circle at 14% 70%, rgb(215 249 147 / 28%), transparent 23%), repeating-radial-gradient(ellipse at 86% 20%, transparent 0 25px, rgb(215 249 147 / 17%) 26px 27px, transparent 31px 50px); }.signal-section.signal-amazo::before { background: linear-gradient(125deg, rgb(57 30 19 / 69%), rgb(100 141 60 / 76%)); }.signal-intro h2 { color: #fff8ea; }.signal-intro p { color: #eff2d5; }.metric-grid { background: rgb(255 245 232 / 20%); }.metric-card { background: var(--fern-wine); }.metric-card-strong { background: var(--fern-lime); color: var(--fern-soil); }.metric-card p { color: #eed8ce; }.metric-card-strong p { color: #4e3921; }.metric-eyebrow { color: #e9d4ca; }.metric-card-strong .metric-eyebrow { color: #5f5723; }.metric-proof { color: var(--fern-lime); }.metric-card-strong .metric-proof { color: #486a29; }.metric-proof-warm { color: var(--fern-petal); }.method-list span { border-color: rgb(215 249 147 / 38%); color: #effbd2; }
+
+.map-node { border-color: #aa7f76; background: #fff1e4; box-shadow: 12px 13px 0 #c98f89; }.map-node svg { color: var(--fern-leaf); }.node-index, .map-connector { color: #865744; }.map-connector::before { background: var(--fern-leaf); }.map-note { border-left-color: var(--fern-leaf); color: #5d3f43; }.atlas-card { background: var(--fern-wine); }.atlas-card-copy span { color: var(--fern-lime); }.atlas-card-copy p { color: #f0d5c9; }.page-rail.light { color: #dcecb8; }.page-rail.light i { background: linear-gradient(var(--fern-lime), transparent); }
+
+.evidence-section { background: #e8bbb2; color: var(--fern-wine); }.evidence-heading .section-label { color: #5d3a37; }.evidence-heading .section-label-dot { background: var(--fern-leaf); }.evidence-heading p { color: #62484d; }.evidence-tabs { background: var(--fern-soil); }.evidence-tab { color: #ecd5ca; border-bottom-color: rgb(215 249 147 / 19%); }.evidence-tab:hover, .evidence-tab.is-active { color: #fff9ed; background: rgb(215 249 147 / 13%); }.evidence-tab.is-active svg { color: var(--fern-lime); }.evidence-stage { background: var(--fern-wine); }.evidence-stage-wash { background: linear-gradient(90deg, rgb(62 33 40 / 97%), rgb(62 33 40 / 77%) 52%, rgb(62 33 40 / 16%)); }.stage-kicker { color: var(--fern-lime); }.evidence-stage-content > svg { color: var(--fern-lime); }.evidence-stage-content p { color: #f2d9d0; }.stage-status { color: #dceeb5; }.stage-status span { background: var(--fern-petal); }.stage-placeholder { border-color: rgb(215 249 147 / 54%); color: #efffd1; background: rgb(57 30 19 / 27%); }.evidence-crop-note { color: #efffd1; }.camera-box { color: var(--fern-petal); }
+
+.hub-os-section { background: var(--fern-leaf); }.hub-os-title-wrap p { color: #f0ecd3; }.hub-os-step { border-top-color: rgb(255 249 237 / 36%); border-bottom-color: rgb(255 249 237 / 16%); }.hub-os-step span { color: var(--fern-lime); }.hub-os-step svg { color: #fff0df; }.hub-os-step strong { color: #fff9ed; }.hub-os-step small { color: #edf0d6; }.hub-os-line { border-top-color: var(--fern-lime); }.hub-os-note { border-color: rgb(215 249 147 / 39%); background: rgb(57 30 19 / 23%); color: #fff0df; }.hub-os-note svg { color: var(--fern-lime); }.hub-os-note strong { color: var(--fern-lime); }
+
+.trajectory-section, .roadmap-section { background: var(--fern-petal); color: var(--fern-wine); }.trajectory-heading .section-label, .roadmap-heading .section-label { color: #62433d; }.trajectory-heading .section-label-dot, .roadmap-heading .section-label-dot { background: var(--fern-leaf); }.trajectory-heading p { color: #5e4146; }.portrait-frame { background: var(--fern-leaf); box-shadow: 16px 18px 0 #a76f67; }.amazo-portrait-card figcaption { border-top-color: #a16e6b; color: #6a4d48; }.amazo-portrait-card figcaption strong { color: #51752f; }.trajectory-identity { color: #50732e; }.trajectory-copy > p:not(.trajectory-identity) { color: #5c4244; }.trajectory-tags span { border-color: #9d6e6a; color: #5a3e40; }.authorship-manifesto { background: var(--fern-wine); }.manifesto-title > svg, .authorship-grid span { color: var(--fern-lime); }.manifesto-title span { color: #f0cfc3; }.authorship-manifesto > p { color: #f1dcd3; }.authorship-grid { background: rgb(215 249 147 / 19%); }.authorship-grid > div { background: rgb(57 30 19 / 34%); }.authorship-grid small { color: #e9d1c7; }
+
+.roadmap-list { border-top-color: #a26e69; }.roadmap-item { border-bottom-color: #a26e69; }.roadmap-item:hover { color: #4e702d; }.roadmap-number, .roadmap-item > svg, .roadmap-footnote svg { color: var(--fern-leaf); }.roadmap-item span { color: #765552; }.roadmap-item p, .roadmap-footnote { color: #5d4446; }
+.closing-section { background: var(--fern-soil); }.closing-cta { border-color: var(--fern-lime); color: var(--fern-lime); }.closing-cta:hover { background: var(--fern-lime); color: var(--fern-soil); }.site-footer { border-top-color: rgb(215 249 147 / 18%); background: var(--fern-wine); color: #e8cfc3; }.footer-brand { color: #fff5e8; }.footer-avatar { border-color: var(--fern-lime); }
+
+@media (prefers-reduced-motion: no-preference) { .pulse-dot { animation-name: fern-glow; } @keyframes fern-glow { 50% { box-shadow: 0 0 0 9px rgb(215 249 147 / 6%); } } }

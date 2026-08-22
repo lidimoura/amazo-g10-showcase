@@ -1,0 +1,22 @@
+/* Style direction: Caderno de Campo Fluido — fotografia autoral da samambaia no Amazonas como paisagem do topo; Amazô e caderno em camadas independentes. */
+.hero-section.hero-photo { background-position: center; background-repeat: no-repeat; background-size: cover; }
+.hero-section.hero-photo .hero-overlay { background: linear-gradient(90deg, rgb(57 30 19 / 96%) 0%, rgb(62 33 40 / 88%) 45%, rgb(57 30 19 / 47%) 100%); }
+.hero-section.hero-photo::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(0deg, rgb(57 30 19 / 46%), transparent 40%); }
+.hero-section.hero-photo .hero-layout { grid-template-columns: minmax(0, 1fr) minmax(250px, 312px); align-items: center; column-gap: clamp(1.25rem, 4vw, 5rem); }
+.hero-showcase-stack { position: relative; z-index: 4; display: grid; width: min(100%, 312px); justify-self: end; gap: 1rem; }
+.hero-showcase-stack .hero-amazo-portrait { position: relative; right: auto; bottom: auto; width: 100%; margin: 0; box-shadow: -15px 17px 0 rgb(57 30 19 / 39%); }
+.hero-showcase-stack .field-note { width: 100%; margin: 0; }
+.hero-photo .hero-flow { z-index: 2; opacity: 0.42; }
+.hero-photo .hero-copy { position: relative; z-index: 3; }
+
+@media (max-width: 900px) {
+  .hero-section.hero-photo .hero-layout { grid-template-columns: minmax(0, 1fr) 240px; column-gap: 1.25rem; }
+  .hero-showcase-stack { width: 240px; gap: 0.75rem; }
+}
+
+@media (max-width: 680px) {
+  .hero-section.hero-photo .hero-layout { grid-template-columns: 1fr; }
+  .hero-showcase-stack { width: min(100%, 330px); justify-self: start; margin-top: 1.8rem; }
+  .hero-showcase-stack .hero-amazo-portrait { display: none; }
+  .hero-section.hero-photo .hero-overlay { background: linear-gradient(90deg, rgb(57 30 19 / 94%), rgb(62 33 40 / 77%)); }
+}

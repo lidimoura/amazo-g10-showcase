@@ -1,0 +1,12 @@
+/* Style direction: Caderno de Campo Fluido — fotografia autoral em primeiro plano, sem filtro cromático, grade ou linha decorativa sobre a imagem. */
+.hero-section.hero-photo { background-color: #111; }
+.hero-section.hero-photo::before, .hero-section.hero-amazo::after { content: none; }
+.hero-section.hero-photo .hero-overlay, .hero-section.hero-photo .hero-grain, .hero-section.hero-photo .hero-flow { display: none; }
+.hero-section.hero-photo .hero-copy { text-shadow: 0 2px 16px rgb(0 0 0 / 92%); }
+.hero-section.hero-photo .section-label { text-shadow: 0 1px 9px rgb(0 0 0 / 88%); }
+.hero-section.hero-photo .hero-copy h1 em { text-shadow: 0 2px 15px rgb(0 0 0 / 92%); }
+.hero-section.hero-photo .hero-status { text-shadow: 0 1px 8px rgb(0 0 0 / 88%); }
+
+@media (max-width: 680px) {
+  .hero-section.hero-photo .hero-copy { text-shadow: 0 2px 18px rgb(0 0 0 / 94%); }
+}

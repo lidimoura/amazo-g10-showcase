@@ -1,0 +1,4 @@
+/* Style direction: Caderno de Campo Fluido — crédito autoral visível, discreto e legível, sem filtro sobre a fotografia. */
+.hero-photo-credit { position: absolute; z-index: 6; right: clamp(1rem, 3vw, 3rem); bottom: 0.85rem; margin: 0; color: #fffaf0; font-size: 0.59rem; font-weight: 750; letter-spacing: 0.1em; line-height: 1.35; text-align: right; text-shadow: 0 2px 8px rgb(0 0 0 / 94%); text-transform: uppercase; }
+
+@media (max-width: 680px) { .hero-photo-credit { right: 0.8rem; bottom: 0.55rem; max-width: 13rem; font-size: 0.5rem; } }

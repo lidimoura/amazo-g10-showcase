@@ -1,0 +1,33 @@
+/* Style direction: Caderno de Campo Fluido — a ilustração oficial da Amazô substitui símbolos genéricos e governa a paleta orgânica. */
+.brand-avatar { display: grid; width: 42px; height: 42px; place-items: center; overflow: hidden; border: 1px solid rgb(239 191 131 / 72%); border-radius: 50%; background: #0f4036; box-shadow: 0 0 0 3px rgb(111 191 171 / 14%); }
+.brand-avatar img { width: 124%; max-width: none; height: 124%; object-fit: cover; object-position: 50% 29%; }
+.hero-section.hero-amazo { background-color: #103c34; background-image: radial-gradient(circle at 74% 20%, rgb(114 157 117 / 40%), transparent 28%), linear-gradient(115deg, #092d27 0%, #123e35 52%, #1b5748 100%); }
+.hero-section.hero-amazo .hero-overlay { background: linear-gradient(90deg, rgb(7 34 29 / 98%) 0%, rgb(7 34 29 / 88%) 47%, rgb(7 34 29 / 55%) 100%); }
+.hero-section.hero-amazo::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.33; background-image: repeating-radial-gradient(ellipse at 94% 38%, transparent 0 20px, rgb(129 214 193 / 42%) 21px 22px, transparent 24px 40px); }
+.hero-amazo-portrait { position: absolute; z-index: 1; right: clamp(4%, 8vw, 12%); bottom: 4rem; width: min(28vw, 330px); overflow: hidden; border: 1px solid rgb(235 203 150 / 60%); border-radius: 48% 48% 3px 3px; background: #154b3f; box-shadow: -28px 30px 0 rgb(9 42 36 / 34%); }
+.hero-amazo-portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgb(6 33 28 / 76%) 100%); }
+.hero-amazo-portrait img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; filter: saturate(0.94) contrast(1.04); }
+.hero-amazo-portrait span { position: absolute; z-index: 1; right: 0.85rem; bottom: 0.8rem; color: #f0d2a2; font-size: 0.52rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+.hero-amazo .field-note { position: relative; z-index: 3; background: rgb(10 45 38 / 82%); }
+.hero-amazo .hero-flow { z-index: 2; opacity: 0.52; }
+.signal-section.signal-amazo { background-color: #0e483c; background-image: radial-gradient(circle at 14% 70%, rgb(94 148 112 / 28%), transparent 23%), repeating-radial-gradient(ellipse at 86% 20%, transparent 0 25px, rgb(148 213 191 / 14%) 26px 27px, transparent 31px 50px); }
+.signal-section.signal-amazo::before { background: linear-gradient(125deg, rgb(10 54 45 / 91%), rgb(12 58 49 / 79%)); }
+.atlas-card img { filter: saturate(0.86) contrast(1.05); }
+.atlas-card::after { background: linear-gradient(0deg, rgb(7 35 30 / 91%) 0%, rgb(7 35 30 / 12%) 72%); }
+.evidence-stage { background: #0e3d34; }
+.evidence-amazo-portrait { position: absolute; top: 0; right: 0; width: 72%; height: 100%; object-fit: cover; object-position: 50% 22%; opacity: 0.78; filter: saturate(0.78) contrast(1.05); }
+.evidence-stage-wash { z-index: 1; background: linear-gradient(90deg, rgb(8 37 31 / 97%), rgb(8 37 31 / 73%) 52%, rgb(8 37 31 / 13%)); }
+.evidence-stage-content, .evidence-crop-note { z-index: 2; }
+.footer-avatar { width: 24px; height: 24px; overflow: hidden; border: 1px solid rgb(144 215 197 / 62%); border-radius: 50%; }
+.footer-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
+
+@media (max-width: 900px) {
+  .hero-amazo-portrait { right: 5%; bottom: 1.4rem; width: 170px; opacity: 0.72; }
+}
+
+@media (max-width: 580px) {
+  .brand-avatar { width: 34px; height: 34px; }
+  .hero-amazo-portrait { display: none; }
+  .hero-section.hero-amazo::after { opacity: 0.22; }
+  .evidence-amazo-portrait { width: 100%; opacity: 0.45; }
+}

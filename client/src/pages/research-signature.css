@@ -1,0 +1,20 @@
+/* Style direction: Caderno de Campo Fluido — corrente estrutural fora do hero, emblema Amazô e marcas editoriais de margem. */
+.page-current { position: relative; }
+.current-spine { position: absolute; z-index: 12; top: 52rem; bottom: 26rem; left: clamp(0.35rem, 1.4vw, 1.5rem); width: clamp(2.2rem, 5vw, 5.5rem); height: auto; overflow: visible; pointer-events: none; opacity: 0.78; }
+.current-spine path { fill: none; stroke: var(--fern-leaf); stroke-width: 2.8; vector-effect: non-scaling-stroke; stroke-linecap: round; }
+.current-spine circle { fill: var(--fern-lime); stroke: var(--fern-wine); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.amazo-emblem, .footer-emblem { display: grid; place-items: center; color: var(--fern-lime); }
+.amazo-emblem { width: 33px; height: 33px; margin-right: 0.2rem; border: 1px solid rgb(215 249 147 / 50%); border-radius: 50%; background: rgb(62 33 40 / 78%); box-shadow: 0 0 0 3px rgb(215 249 147 / 9%); }
+.amazo-emblem svg { width: 24px; height: 24px; }
+.footer-emblem { width: 22px; height: 22px; color: var(--fern-lime); }.footer-emblem svg { width: 20px; height: 20px; }
+.signal-section, .hub-os-section, .roadmap-section { position: relative; }
+.signal-section::after, .hub-os-section::after, .roadmap-section::after { position: absolute; right: clamp(1rem, 5vw, 6rem); top: 1.25rem; font-size: 0.56rem; font-weight: 800; letter-spacing: 0.17em; text-transform: uppercase; writing-mode: vertical-rl; opacity: 0.78; }
+.signal-section::after { content: "caderno / dados de partida"; color: var(--fern-lime); }.hub-os-section::after { content: "método / autoria humana"; color: var(--fern-lime); }.roadmap-section::after { content: "arquivo / evolução"; color: var(--fern-leaf); }
+.roadmap-item:nth-child(odd) { margin-left: clamp(0rem, 3vw, 4rem); }.roadmap-item:nth-child(even) { margin-right: clamp(0rem, 4vw, 6rem); }
+
+@media (max-width: 680px) {
+  .current-spine { top: 48rem; left: 0.25rem; width: 1.8rem; bottom: 20rem; opacity: 0.38; }
+  .amazo-emblem { width: 27px; height: 27px; }.amazo-emblem svg { width: 20px; height: 20px; }
+  .signal-section::after, .hub-os-section::after, .roadmap-section::after { right: 0.4rem; font-size: 0.47rem; }
+  .roadmap-item:nth-child(odd), .roadmap-item:nth-child(even) { margin-left: 0; margin-right: 0; }
+}
