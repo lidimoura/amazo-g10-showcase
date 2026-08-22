@@ -160,3 +160,11 @@ Nenhum repositório foi criado, tornado público, enviado ao GitHub ou publicado
 Por decisão explícita da Lídi Moura, a nomenclatura institucional do showcase foi corrigida de **Hub OS NEXUS** para **Hub OS**. O repositório oficial de referência passou a ser `https://github.com/lidimoura/Hub_OS`, confirmado como privado. A LP, a meta descrição, o README, o DEVLOG, o registro de links e as classes públicas internas foram atualizados para não preservar a denominação anterior.
 
 `pnpm run check`, `pnpm run build` e a exportação estática com `pnpm run build:pages` foram concluídos após a correção. A publicação externa continua pendente de aprovação explícita.
+
+## 2026-08-22 — Showcase público e GitHub Pages validados
+
+Após aprovação explícita da Lídi, foi criado o repositório público [`lidimoura/amazo-g10-showcase`](https://github.com/lidimoura/amazo-g10-showcase). A fonte da LP foi enviada à branch `main`, e o build estático foi publicado na branch `gh-pages`. O GitHub Pages foi configurado para essa branch e a URL `https://lidimoura.github.io/amazo-g10-showcase/` foi validada com o hero e a navegação carregados.
+
+Durante a validação, a primeira versão publicada revelou que o roteador cliente não respeitava o caminho base do Pages. O roteamento foi corrigido para usar a base de Vite quando `GITHUB_PAGES=true`; os builds local e estático foram executados novamente, e a publicação corrigida passou a carregar a rota inicial corretamente.
+
+O README de `amazo-guia-g10` recebeu uma referência curta ao showcase e foi corrigido de Hub OS NEXUS para Hub OS. Nenhum código do MVP RAG foi incorporado à LP; os repositórios permanecem separados por finalidade.

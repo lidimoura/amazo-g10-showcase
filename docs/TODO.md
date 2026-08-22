@@ -143,15 +143,15 @@
 
 - [x] Auditar `.gitignore`, histórico local e ativos antes de qualquer publicação pública.
 - [x] Preparar README, instruções de build e workflow de GitHub Pages para o repositório do showcase.
-- [ ] Preparar referência cruzada no repositório `lidimoura/amazo-guia-g10`, sem misturar o código do MVP e da LP.
-- [ ] Apresentar nome, visibilidade, arquivos, diff e plano de publicação para aprovação explícita da Lídi.
-- [ ] Criar repositório, fazer commit/push e ativar GitHub Pages somente após aprovação explícita.
+- [x] Preparar referência cruzada no repositório `lidimoura/amazo-guia-g10`, sem misturar o código do MVP e da LP.
+- [x] Apresentar nome, visibilidade, arquivos, diff e plano de publicação para aprovação explícita da Lídi.
+- [x] Criar repositório, fazer commit/push e ativar GitHub Pages após aprovação explícita.
 
 ## Próximo incremento — links públicos e percurso do ecossistema
 
 - [x] Validar URLs oficiais do repositório G10, showcase Typebot, Hub OS, LinkedIn e portfólio Link d’Água.
 - [x] Inserir uma seção de links com rótulos que distingam MVP técnico, versão histórica, método, trajetória profissional e portfólio.
-- [ ] Referenciar os mesmos destinos no README do showcase e na documentação cruzada com `amazo-guia-g10`.
+- [x] Referenciar os mesmos destinos no README do showcase e na documentação cruzada com `amazo-guia-g10`.
 - [x] Validar a seção em desktop e mobile, sem publicar nem fazer push sem aprovação explícita.
 
 ## Backlog separado — atualização do portfólio Link d’Água

@@ -153,6 +153,13 @@ const ecosystemLinks = [
     href: "https://link.encontrodagua.com/r/portifolio-lidimoura",
     icon: ArrowUpRight,
   },
+  {
+    kicker: "SHOWCASE / CÓDIGO PÚBLICO",
+    title: "Repositório desta LP",
+    description: "Código, documentação editorial e histórico de publicação do showcase.",
+    href: "https://github.com/lidimoura/amazo-g10-showcase",
+    icon: GitBranch,
+  },
 ];
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -573,7 +580,7 @@ export default function Home() {
               );
             })}
           </div>
-          <p className="ecosystem-note">O repositório próprio desta LP será adicionado nesta seção depois de sua criação e publicação aprovadas.</p>
+          <p className="ecosystem-note">O código desta LP está disponível em repositório público separado, preservando a autonomia entre o showcase visual e o MVP técnico do Challenge.</p>
         </section>
 
         <section className="closing-section">

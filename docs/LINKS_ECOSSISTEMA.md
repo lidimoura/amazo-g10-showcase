@@ -5,6 +5,7 @@ Este registro organiza destinos públicos e institucionais para a landing page, 
 | Destino | Papel na narrativa | URL canônica | Estado de validação |
 |---|---|---|---|
 | Repositório técnico do Challenge | MVP documental Amazô.guia, código e evidências técnicas do G10. | `https://github.com/lidimoura/amazo-guia-g10` | Repositório e README consultados em 2026-08-22. |
+| Repositório deste showcase | Código, documentação editorial e histórico da landing page. | `https://github.com/lidimoura/amazo-g10-showcase` | Público, criado e enviado em 2026-08-22. |
 | Showcase histórico Typebot | Origem pública da Amazô como SDR/recepção digital. | `https://lidimoura.github.io/amazo.ia-showcase/` | URL indicada no README do repositório oficial G10; teste de endpoint pendente. |
 | Código do showcase Typebot | Referência de origem visual e conversacional, separada do MVP RAG. | `https://github.com/lidimoura/amazo.ia-showcase` | URL indicada no README do repositório oficial G10. |
 | LinkedIn de Lídi Moura | Trajetória profissional, dados, IA e automação. | `https://www.linkedin.com/in/lidimoura/` | Perfil confirmado no LinkedIn em 2026-08-22. |
@@ -17,7 +18,7 @@ Os links do Challenge e da versão Typebot devem ser apresentados como produtos 
 
 ## Aplicação na landing page
 
-A seção **“Ecossistema e referências”** apresenta os links públicos como cartões de percurso. O repositório técnico do Challenge, a versão histórica Typebot, o LinkedIn e o portfólio são links externos; o Hub OS é um cartão informativo de acesso restrito. O repositório próprio da LP entrará na seção somente após sua criação, publicação e validação da URL final.
+A seção **“Ecossistema e referências”** apresenta os links públicos como cartões de percurso. O repositório técnico do Challenge, o repositório próprio da LP, a versão histórica Typebot, o LinkedIn e o portfólio são links externos; o Hub OS é um cartão informativo de acesso restrito. O GitHub Pages do showcase foi validado em `https://lidimoura.github.io/amazo-g10-showcase/` em 2026-08-22.
 
 ## Backlog de portfólio
 
