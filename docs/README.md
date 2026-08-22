@@ -12,6 +12,7 @@ Esta pasta concentra os artefatos de decisão, evidência e manutenção da land
 | [`LINKS_ECOSSISTEMA.md`](./LINKS_ECOSSISTEMA.md) | Registro dos links públicos, escopos e restrições de visibilidade do ecossistema. |
 | [`GITHUB_PAGES_PUBLICATION_PLAN.md`](./GITHUB_PAGES_PUBLICATION_PLAN.md) | Estratégia de repositório, exportação estática e publicação futura no GitHub Pages. |
 | [`RAG_SOURCE_GOVERNANCE.md`](./RAG_SOURCE_GOVERNANCE.md) | Regra pública de curadoria para distinguir pesquisa classificada, fonte de verdade e dado operacional. |
+| [`SHOWCASE_SYNC_CONTRACT.md`](./SHOWCASE_SYNC_CONTRACT.md) | Contrato de leitura, revisão humana e atualização entre o repositório técnico e a LP. |
 
 ## Convenções
 

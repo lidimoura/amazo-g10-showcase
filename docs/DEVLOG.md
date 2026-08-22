@@ -192,3 +192,9 @@ Materiais e ferramentas de pesquisa permanecem internos. A LP não expõe links,
 Por decisão da Lídi, o showcase deixou de exibir qualquer contagem ou referência ao acervo interno usado no processo criativo do Challenge. A seção **Catálogo e evidências** agora descreve exclusivamente a fonte de verdade em construção para a Amazô: índice e governança; trajetória; Encontro d’Água Hub; Hub OS; produtos; serviços; regras de negócio; processos; e portfólio.
 
 A página explica o contrato mínimo de entrada — documento aprovado, versão, responsável e finalidade de resposta — e exclui CRM, dados pessoais, material de pesquisa e conteúdo confidencial. A lista nominal de arquivos permanece sob aprovação da CEO, antes de qualquer ingestão no RAG ou divulgação pública.
+
+## 2026-08-22 — Sincronização sob solicitação com amazo-guia-g10
+
+Foi definido um contrato público de sincronização entre o repositório técnico e o showcase. O manifesto `showcase-status.yml` concentra apenas estados públicos do Challenge, catálogo de fonte de verdade, testes e evidências aprovadas. A LP não fará inferências a partir de rascunhos ou documentação interna.
+
+Por decisão da Lídi, não haverá rotina recorrente enquanto a fonte de verdade estiver em construção. A atualização será acionada sob demanda pela solicitação `sincronizar showcase com amazo-guia-g10`; ela produzirá relatório de impacto e diff antes de qualquer publicação. O desenho de atualização por evento permanece apenas documentado para evolução futura, com validação de assinatura e segredo por variável de ambiente.

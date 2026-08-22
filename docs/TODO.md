@@ -181,3 +181,19 @@
 - [x] Explicar os metadados mínimos de cada documento sem expor arquivos, credenciais, CRM ou conteúdo confidencial.
 - [x] Preservar as ferramentas internas de curadoria sem links nem detalhes de processo criativo na LP.
 - [x] Validar o novo catálogo em desktop e mobile antes de solicitar aprovação para atualizar o GitHub Pages.
+
+## Sincronização rastreável — amazo-guia-g10 → showcase
+
+- [ ] Definir um manifesto público de status no repositório técnico com campos permitidos para a LP.
+- [ ] Mapear quais mudanças exigem reflexo no showcase e quais permanecem técnicas, internas ou confidenciais.
+- [ ] Registrar o fluxo de detecção, revisão, aprovação humana, atualização da LP e publicação no GitHub Pages.
+- [ ] Escolher entre monitoramento recorrente com relatório de impacto ou preparação sob demanda a cada alteração relevante.
+- [ ] Configurar qualquer rotina somente após aprovação explícita da Lídi e testar a rastreabilidade de ponta a ponta.
+
+## Decisão de monitoramento
+
+- [ ] Preparar um manifesto público de sincronização no repositório `amazo-guia-g10`.
+- [x] Definir a sincronização somente sob solicitação, sem rotina recorrente enquanto a fonte de verdade estiver em curadoria.
+- [x] Documentar o acionamento manual por marco relevante como rota principal imediata.
+- [ ] Documentar requisitos de segurança e infraestrutura para futura atualização por evento, sem ativá-la.
+- [x] Manter qualquer frequência recorrente desativada até nova decisão explícita da Lídi.
