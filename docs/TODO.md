@@ -197,3 +197,11 @@
 - [x] Documentar o acionamento manual por marco relevante como rota principal imediata.
 - [ ] Documentar requisitos de segurança e infraestrutura para futura atualização por evento, sem ativá-la.
 - [x] Manter qualquer frequência recorrente desativada até nova decisão explícita da Lídi.
+
+## Sincronização manual — fonte de verdade configurada
+
+- [x] Ler o manifesto e os documentos de fonte de verdade recém-adicionados ao repositório `amazo-guia-g10`.
+- [x] Separar fatos publicáveis de informações internas, operacionais ou ainda em curadoria.
+- [x] Atualizar o catálogo, o status técnico e as evidências da LP com dados verificáveis.
+- [x] Registrar versão, data de leitura, limites e fontes da atualização no DEVLOG do showcase.
+- [ ] Validar a atualização e apresentar o diff público para aprovação antes de publicar no GitHub Pages.

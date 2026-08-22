@@ -33,7 +33,7 @@ Cada documento precisa ter responsável, versão/data, público permitido, final
 
 ## Estado atual
 
-O Challenge está em curadoria de fonte. A LP apresenta o modelo de governança e os núcleos documentais em construção, mas não declara uma base ativa antes da aprovação da Lídi. A seleção nominal será registrada em catálogo separado no repositório técnico `amazo-guia-g10` antes da ingestão.
+O Challenge possui uma fonte de verdade pública versionada, organizada em duas camadas de leitura. A LP pode apresentar esse catálogo e seus metadados, mas não declara uma base RAG ativa antes da aprovação nominal da Lídi, da ingestão e dos testes. A seleção nominal será registrada no repositório técnico `amazo-guia-g10` antes da ingestão.
 
 O estado público desse catálogo será lido pelo showcase por meio do manifesto técnico `showcase-status.yml`, segundo o contrato registrado em [`SHOWCASE_SYNC_CONTRACT.md`](./SHOWCASE_SYNC_CONTRACT.md). O manifesto não substitui a revisão humana nem autoriza documentos ainda não aprovados.
 

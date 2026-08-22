@@ -13,6 +13,7 @@ Esta pasta concentra os artefatos de decisão, evidência e manutenção da land
 | [`GITHUB_PAGES_PUBLICATION_PLAN.md`](./GITHUB_PAGES_PUBLICATION_PLAN.md) | Estratégia de repositório, exportação estática e publicação futura no GitHub Pages. |
 | [`RAG_SOURCE_GOVERNANCE.md`](./RAG_SOURCE_GOVERNANCE.md) | Regra pública de curadoria para distinguir pesquisa classificada, fonte de verdade e dado operacional. |
 | [`SHOWCASE_SYNC_CONTRACT.md`](./SHOWCASE_SYNC_CONTRACT.md) | Contrato de leitura, revisão humana e atualização entre o repositório técnico e a LP. |
+| [`SYNC_AUDIT_2026-08-22_RAG_TRUTH_SOURCES.md`](./SYNC_AUDIT_2026-08-22_RAG_TRUTH_SOURCES.md) | Fatos publicáveis, limites e impactos da primeira sincronização com a fonte de verdade v2.1. |
 
 ## Convenções
 

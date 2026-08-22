@@ -198,3 +198,21 @@ A página explica o contrato mínimo de entrada — documento aprovado, versão,
 Foi definido um contrato público de sincronização entre o repositório técnico e o showcase. O manifesto `showcase-status.yml` concentra apenas estados públicos do Challenge, catálogo de fonte de verdade, testes e evidências aprovadas. A LP não fará inferências a partir de rascunhos ou documentação interna.
 
 Por decisão da Lídi, não haverá rotina recorrente enquanto a fonte de verdade estiver em construção. A atualização será acionada sob demanda pela solicitação `sincronizar showcase com amazo-guia-g10`; ela produzirá relatório de impacto e diff antes de qualquer publicação. O desenho de atualização por evento permanece apenas documentado para evolução futura, com validação de assinatura e segredo por variável de ambiente.
+
+## 2026-08-22 — Fonte de verdade v2.1 sincronizada localmente
+
+### Evidência de origem
+
+Foi auditado o commit `1e1fc39` de `lidimoura/amazo-guia-g10`, que adiciona os documentos públicos de fonte de verdade em `data/sources/public/`. O índice `00-README-e-ordem.md` estabelece uma base documental versionada e segura, com nove documentos substantivos organizados em duas camadas: atendimento público primeiro e complemento depois.
+
+### Reflexo aplicado na LP
+
+O showcase passou a apresentar a fonte como **v2.1 disponível**, com nove documentos e ordem de ingestão definida. A arquitetura agora identifica a base autorizada como “09 documentos + metadados”, e a aba de catálogo explicita Camada 01, Camada 02, governança de versão e próximo estágio de ingestão. O roteiro de evolução foi ajustado para reconhecer a fonte versionada sem antecipar RAG funcional.
+
+### Limites mantidos
+
+O manifesto técnico ainda informa `ingestion_status: nao_iniciada`, `test_status: nao_iniciado` e catálogo RAG em construção. Por isso, a LP não afirma agente ativo, fontes ingeridas, recuperação validada, testes concluídos, integração produtiva ou captura de leads. Nenhum dado operacional, ferramenta interna de curadoria ou conteúdo confidencial foi inserido na interface pública.
+
+### Validação local
+
+`pnpm run check` e `pnpm run build` foram concluídos. A composição foi conferida em desktop (1280×720) e mobile (375×812). O aviso de bundle acima de 500 kB continua registrado como melhoria futura e não bloqueou a compilação.

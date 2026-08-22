@@ -52,10 +52,10 @@ const evidenceItems = [
   {
     id: "sources",
     kicker: "CATÁLOGO / FONTES RAG",
-    title: "Base autorizada, não acervo inteiro",
+    title: "Fonte de verdade versionada",
     description:
-      "A Amazô consultará somente documentos de verdade em construção para a trajetória, o Hub, o Hub OS, as ofertas e os processos. Cada entrada precisa de versão, responsável e autorização da Lídi.",
-    status: "Curadoria humana em andamento",
+      "Nove documentos públicos, com versão, responsável e ordem de ingestão definida, formam a primeira base autorizada da Amazô. A ingestão e os testes do RAG ainda não foram iniciados.",
+    status: "Catálogo v2.1 disponível · ingestão pendente",
     icon: BookOpen,
   },
   {
@@ -115,7 +115,7 @@ const roadmap = [
   {
     label: "EVOLUÇÃO PROTEGIDA",
     title: "RAG aprovado e handoff controlado",
-    text: "A integração futura depende de documentos versionados, RLS, RBAC, idempotência, feature flag, rollback e aprovação humana.",
+    text: "A fonte de verdade já está versionada; ingestão, testes, RLS, RBAC, idempotência, feature flag e handoff continuam condicionados à validação e aprovação humana.",
     tone: "futuro",
   },
 ];
@@ -311,10 +311,10 @@ export default function Home() {
           </div>
           <div className="metric-grid">
             <article className="metric-card metric-card-strong">
-              <span className="metric-eyebrow">CATÁLOGO EM CONSTRUÇÃO</span>
-              <strong>09</strong>
-              <p>núcleos documentais previstos para a fonte de verdade da Amazô.</p>
-              <span className="metric-proof">Curadoria sob aprovação da CEO</span>
+                <span className="metric-eyebrow">FONTE DE VERDADE / V2.1</span>
+                <strong>09</strong>
+                <p>documentos públicos versionados, organizados em duas camadas para a ingestão da Amazô.</p>
+                <span className="metric-proof">Catálogo disponível · ingestão pendente</span>
             </article>
             <article className="metric-card">
               <span className="metric-eyebrow">ARQUITETURA PROPOSTA</span>
@@ -354,7 +354,7 @@ export default function Home() {
               <div className="map-node map-node-source">
                 <span className="node-index">01</span>
                 <BookOpen size={22} />
-                <div><strong>Base autorizada</strong><small>documentos + metadados</small></div>
+                <div><strong>Base autorizada</strong><small>09 documentos + metadados</small></div>
               </div>
               <div className="map-connector"><span>normaliza</span></div>
               <div className="map-node map-node-retrieval">
@@ -388,7 +388,7 @@ export default function Home() {
               <SectionLabel>Catálogo e evidências</SectionLabel>
               <h2>O RAG só responde com o que foi autorizado.</h2>
             </div>
-            <p>Esta área separa a pesquisa que orienta o projeto dos documentos que poderão se tornar fonte de verdade do agente. Prints, vídeo e testes entram depois da sua curadoria e aprovação de publicação.</p>
+            <p>Esta área registra o que já é fonte de verdade pública e o que ainda permanece pendente: ingestão, testes, prints e vídeo só entram após validação e aprovação de publicação.</p>
           </div>
 
           <div className="evidence-workbench">
@@ -416,9 +416,9 @@ export default function Home() {
               <img className="evidence-amazo-portrait" src={assets.amazoProcess} alt="" aria-hidden="true" />
               <div className="evidence-stage-wash" />
               <aside className="evidence-audit-strip" aria-label="Índice de artefatos de validação">
-                <span>BASE / 09 núcleos</span>
+                <span>BASE / 09 documentos</span>
                 <span>REGRA / versão + responsável</span>
-                <span>QA / roteiro definido</span>
+                <span>RAG / ingestão pendente</span>
               </aside>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -435,15 +435,15 @@ export default function Home() {
                   <p>{activeEvidence.description}</p>
                   {activeEvidence.id === "sources" && (
                     <>
-                      <div className="rag-source-catalog" aria-label="Núcleos da fonte de verdade em construção">
-                        <div><span>01–03</span><strong>Identidade</strong><small>trajetória, Hub e Hub OS</small></div>
-                        <div><span>04–06</span><strong>Oferta</strong><small>produtos, serviços e regras</small></div>
-                        <div><span>07–08</span><strong>Operação</strong><small>processos e portfólio</small></div>
-                        <div><span>00</span><strong>Governança</strong><small>índice, status e política de atualização</small></div>
+                      <div className="rag-source-catalog" aria-label="Estrutura da fonte de verdade versão 2.1">
+                        <div><span>CAMADA 01</span><strong>Atendimento público</strong><small>perfil, Hub, ofertas, canais e Amazô</small></div>
+                        <div><span>CAMADA 02</span><strong>Complemento</strong><small>trajetória, FAQ, formação e portfólio</small></div>
+                        <div><span>09 DOCS</span><strong>Fonte versionada</strong><small>data, responsável, status e visibilidade</small></div>
+                        <div><span>PRÓXIMO</span><strong>Ingestão RAG</strong><small>recuperação, citação, recusa e QA</small></div>
                       </div>
                       <ul className="rag-source-scope" aria-label="Regras públicas das fontes do RAG">
                         <li><strong>Entra:</strong> somente documento aprovado, com versão, responsável e finalidade de resposta.</li>
-                        <li><strong>Fica fora:</strong> CRM, dados pessoais, material de pesquisa e conteúdo confidencial.</li>
+                        <li><strong>Fica fora:</strong> CRM, dados pessoais, pesquisa criativa e conteúdo confidencial.</li>
                       </ul>
                     </>
                   )}
@@ -457,7 +457,7 @@ export default function Home() {
                 <span>governança / rag</span>
                 <strong>Fonte de verdade</strong>
                 <p>Documentos permitidos, com dono, versão e finalidade de uso.</p>
-                <small>Próximo artefato: catálogo aprovado, pergunta, fonte recuperada e decisão de resposta.</small>
+                <small>Próximo artefato: pergunta, fonte recuperada, citação e decisão de resposta.</small>
               </aside>
               <div className="evidence-crop-note"><CameraIcon /> print · vídeo · log de teste</div>
             </div>
