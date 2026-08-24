@@ -36,20 +36,19 @@ import "./ecosystem-links.css";
 import "./rag-sources.css";
 import "./qa-scroll.css";
 
-const publicAsset = (filename: string, manusStoragePath: string) =>
-  import.meta.env.VITE_PUBLIC_EXPORT === "true" ? `${import.meta.env.BASE_URL}assets/${filename}` : manusStoragePath;
+const publicAsset = (filename: string) => `${import.meta.env.BASE_URL}assets/${filename}`;
 
 const assets = {
   // Caderno de Campo Fluido: L1 sustenta presença de marca; L2 contextualiza pesquisa; L3 explica o fluxo RAG.
-  amazoHero: publicAsset("amazo-lp-01-hero-peito-limpo.png", "/manus-storage/amazo-lp-01-hero-peito-limpo_37318e92.png"),
-  amazoProcess: publicAsset("amazo-lp-02-caderno-peito-limpo.png", "/manus-storage/amazo-lp-02-caderno-peito-limpo_aaa1efee.png"),
-  amazoFlow: publicAsset("amazo-lp-03-fluxo-peito-limpo.png", "/manus-storage/amazo-lp-03-fluxo-peito-limpo_0cc09b91.png"),
-  fernPhoto: publicAsset("samambaia-amazonas-autoral.webp", "/manus-storage/samambaia-amazonas-autoral_bda4bba4.webp"),
-  hubLogoTransparent: publicAsset("hub-encontro-dagua-logo-transparent.png", "/manus-storage/hub-encontro-dagua-logo-transparent_82a1e28a.png"),
-  hubLogoLight: publicAsset("hub-encontro-dagua-logo-light.png", "/manus-storage/hub-encontro-dagua-logo-light_04169e54.png"),
-  // Evidencias de deploy e QA — sincronizacao 23/08/2026
-  deployScreenshot: publicAsset("Deploy-amazo-guia-G10-streamlit.png", ""),
-  qaScreenshot: publicAsset("Teste-QA-Amazo-guia-g10.png", ""),
+  amazoHero: publicAsset("amazo-lp-01-hero-peito-limpo.png"),
+  amazoProcess: publicAsset("amazo-lp-02-caderno-peito-limpo.png"),
+  amazoFlow: publicAsset("amazo-lp-03-fluxo-peito-limpo.png"),
+  fernPhoto: publicAsset("samambaia-amazonas-autoral.webp"),
+  hubLogoTransparent: publicAsset("hub-encontro-dagua-logo-transparent.png"),
+  hubLogoLight: publicAsset("hub-encontro-dagua-logo-light.png"),
+  // Evidências de deploy e QA — sincronização 23/08/2026
+  deployScreenshot: publicAsset("Deploy-amazo-guia-G10-streamlit.png"),
+  qaScreenshot: publicAsset("Teste-QA-Amazo-guia-g10.png"),
 };
 
 const evidenceItems = [

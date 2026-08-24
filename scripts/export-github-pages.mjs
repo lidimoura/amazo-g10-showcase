@@ -9,7 +9,7 @@ import path from "node:path";
 const sourceRoot = path.resolve(import.meta.dirname, "..");
 const outputArgument = process.argv.slice(2).find((argument) => argument !== "--");
 const outputRoot = outputArgument ? path.resolve(outputArgument) : null;
-const staticAssetDirectory = process.env.SHOWCASE_STATIC_ASSET_DIR || "/home/ubuntu/webdev-static-assets";
+const staticAssetDirectory = process.env.SHOWCASE_STATIC_ASSET_DIR || path.join(sourceRoot, "client", "public", "assets");
 
 const publicAssets = [
   "amazo-lp-01-hero-peito-limpo.png",
@@ -18,6 +18,8 @@ const publicAssets = [
   "samambaia-amazonas-autoral.webp",
   "hub-encontro-dagua-logo-transparent.png",
   "hub-encontro-dagua-logo-light.png",
+  "Deploy-amazo-guia-G10-streamlit.png",
+  "Teste-QA-Amazo-guia-g10.png",
 ];
 
 if (!outputRoot) {
