@@ -1,0 +1,123 @@
+/*
+ * qa-scroll.css
+ * Container scrollável para o print longo da bateria de QA.
+ * Mantém o layout da LP intacto enquanto expõe todo o conteúdo da imagem.
+ *
+ * Decisão: max-height 420px — cabe no card de evidência sem quebrar seções
+ * adjacentes. Setas ↑↓ absolutas no canto direito com paleta verde da LP.
+ */
+
+/* ── Wrapper posicionado para as setas absolutas ── */
+.qa-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 10px;
+  overflow: visible; /* setas ficam fora do clip */
+}
+
+/* ── Container scrollável ── */
+.qa-scroll-container {
+  max-height: 420px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(163, 201, 68, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  scroll-behavior: smooth;
+  /* scrollbar fina temática */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(163, 201, 68, 0.35) transparent;
+}
+
+.qa-scroll-container::-webkit-scrollbar {
+  width: 5px;
+}
+.qa-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.qa-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(163, 201, 68, 0.35);
+  border-radius: 3px;
+}
+
+/* ── Imagem dentro do container ── */
+.qa-scroll-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 9px;
+}
+
+/* ── Botões de scroll ── */
+.qa-scroll-btn {
+  position: absolute;
+  right: -14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(163, 201, 68, 0.15);
+  color: #a3c944;
+  border: 1px solid rgba(163, 201, 68, 0.32);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease, opacity 0.18s ease, transform 0.12s ease;
+  z-index: 10;
+  padding: 0;
+}
+
+.qa-scroll-btn:hover:not(:disabled) {
+  background: rgba(163, 201, 68, 0.28);
+  transform: scale(1.08);
+}
+
+.qa-scroll-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.qa-scroll-btn:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.qa-scroll-up {
+  top: 8px;
+}
+
+.qa-scroll-down {
+  bottom: 8px;
+}
+
+/* ── Screenshot de deploy (prop. normal, sem scroll) ── */
+.evidence-screenshot-wrap {
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(163, 201, 68, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.evidence-screenshot-deploy {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 9px;
+}
+
+/* ── Responsivo: em telas < 480px reduzir max-height ── */
+@media (max-width: 480px) {
+  .qa-scroll-container {
+    max-height: 320px;
+  }
+  .qa-scroll-btn {
+    right: -10px;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}

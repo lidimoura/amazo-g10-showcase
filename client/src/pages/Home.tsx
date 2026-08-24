@@ -20,7 +20,7 @@ import {
   Sparkles,
   Waypoints,
 } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./trajectory.css";
 import "./amazo-brand.css";
 import "./fern-palette.css";
@@ -34,6 +34,7 @@ import "./hub-logo.css";
 import "./field-artifacts.css";
 import "./ecosystem-links.css";
 import "./rag-sources.css";
+import "./qa-scroll.css";
 
 const publicAsset = (filename: string, manusStoragePath: string) =>
   import.meta.env.VITE_PUBLIC_EXPORT === "true" ? `${import.meta.env.BASE_URL}assets/${filename}` : manusStoragePath;
@@ -46,6 +47,9 @@ const assets = {
   fernPhoto: publicAsset("samambaia-amazonas-autoral.webp", "/manus-storage/samambaia-amazonas-autoral_bda4bba4.webp"),
   hubLogoTransparent: publicAsset("hub-encontro-dagua-logo-transparent.png", "/manus-storage/hub-encontro-dagua-logo-transparent_82a1e28a.png"),
   hubLogoLight: publicAsset("hub-encontro-dagua-logo-light.png", "/manus-storage/hub-encontro-dagua-logo-light_04169e54.png"),
+  // Evidencias de deploy e QA — sincronizacao 23/08/2026
+  deployScreenshot: publicAsset("Deploy-amazo-guia-G10-streamlit.png", ""),
+  qaScreenshot: publicAsset("Teste-QA-Amazo-guia-g10.png", ""),
 };
 
 const evidenceItems = [
@@ -54,26 +58,26 @@ const evidenceItems = [
     kicker: "CATÁLOGO / FONTES RAG",
     title: "Fonte de verdade versionada",
     description:
-      "Nove documentos públicos, com versão, responsável e ordem de ingestão definida, formam a primeira base autorizada da Amazô. A ingestão e os testes do RAG ainda não foram iniciados.",
-    status: "Catálogo v2.1 disponível · ingestão pendente",
+      "Nove documentos públicos, com versão, responsável e ordem de ingestão definida, formam a base autorizada da Amazô. RAG em produção com 3 camadas de LLM resiliente e embeddings híbridos (MiniLM + TF-IDF).",
+    status: "✅ 9 docs ingeridos · RAG ativo · 6 cenários QA validados",
     icon: BookOpen,
   },
   {
     id: "agent",
-    kicker: "EVIDÊNCIA 01",
-    title: "Conversa do agente",
+    kicker: "EVIDÊNCIA 01 / DEPLOY PÚBLICO",
+    title: "Deploy ativo — Amazô.guia respondendo",
     description:
-      "Prints de perguntas válidas, recuperação de fontes e comportamento de recusa para assuntos sem evidência suficiente.",
-    status: "Aguardando captura",
+      'Print do deploy público em amazo-guia-g10.streamlit.app respondendo à pergunta "Quem é Lídi Moura?" com citação de fonte da base documental.',
+    status: "✅ Produção · amazo-guia-g10.streamlit.app",
     icon: ScanSearch,
   },
   {
     id: "tests",
-    kicker: "EVIDÊNCIA 02",
-    title: "Caderno de testes",
+    kicker: "EVIDÊNCIA 02 / BATERIA QA",
+    title: "6 cenários validados em produção",
     description:
-      "Registro de perguntas diretas, cruzamento de fontes, variações de linguagem e testes contra alucinação.",
-    status: "Estrutura definida",
+      "Registro da sessão completa de testes: identidade, catálogo, conceito da holding, roteamento para contato, guardrails (fora de escopo) e anti-jailbreak (prompt injection).",
+    status: "✅ 100% validado · 6/6 cenários",
     icon: ScrollText,
   },
   {
@@ -102,7 +106,7 @@ const roadmap = [
   },
   {
     label: "ECOSSISTEMA",
-    title: "Conexão com Hub, Link d’Água e CRM",
+    title: "Conexão com Hub, Link d'Água e CRM",
     text: "A Amazô passa a orientar experiências de presença digital e captação, enquanto os dados operacionais permanecem sob controles de produto e segurança.",
     tone: "ecossistema",
   },
@@ -157,9 +161,9 @@ const ecosystemLinks = [
     icon: ArrowUpRight,
   },
   {
-    kicker: "PORTFÓLIO / LINK D’ÁGUA",
+    kicker: "PORTFÓLIO / LINK D'ÁGUA",
     title: "Portfólio profissional",
-    description: "Projetos, formação e ofertas organizados no Link d’Água.",
+    description: "Projetos, formação e ofertas organizados no Link d'Água.",
     href: "https://link.encontrodagua.com/r/portifolio-lidimoura",
     icon: ArrowUpRight,
   },
@@ -187,6 +191,20 @@ function RouteMarker({ code, label }: { code: string; label: string }) {
 
 export default function Home() {
   const [activeEvidence, setActiveEvidence] = useState(evidenceItems[0]);
+  const qaScrollRef = useRef<HTMLDivElement>(null);
+  const [qaAtTop, setQaAtTop] = useState(true);
+  const [qaAtBottom, setQaAtBottom] = useState(false);
+
+  const scrollQA = (dir: "up" | "down") => {
+    qaScrollRef.current?.scrollBy({ top: dir === "down" ? 120 : -120, behavior: "smooth" });
+  };
+
+  const handleQaScroll = () => {
+    const el = qaScrollRef.current;
+    if (!el) return;
+    setQaAtTop(el.scrollTop <= 4);
+    setQaAtBottom(el.scrollTop + el.clientHeight >= el.scrollHeight - 4);
+  };
 
   return (
     <div className="min-h-screen overflow-x-clip bg-[#102b27] text-[#f4f0e6]">
@@ -219,6 +237,7 @@ export default function Home() {
           <path d="M92 0 C24 170 112 330 47 520 S114 880 45 1120 S104 1450 38 1740 S108 2110 42 2390 S98 2700 35 3060 S106 3430 44 3760 S105 4160 45 4500 S93 4780 30 5000" />
           <circle cx="47" cy="520" r="5" /><circle cx="38" cy="1740" r="5" /><circle cx="42" cy="2390" r="5" /><circle cx="44" cy="3760" r="5" />
         </svg>
+
         <section id="inicio" className="hero-section hero-amazo hero-photo" style={{ backgroundImage: `url(${assets.fernPhoto})` }}>
           <div className="hero-layout">
             <motion.div
@@ -233,7 +252,7 @@ export default function Home() {
                 <em> É a evidência que sustenta cada resposta.</em>
               </h1>
               <p className="hero-lede">
-                Amazô é uma proposta de agente RAG com fonte, limite e rastreabilidade — construída como MVP acadêmico e registrada como ativo de pesquisa aplicada da Holding AI-Native Encontro d’Água.
+                Amazô é uma proposta de agente RAG com fonte, limite e rastreabilidade — construída como MVP acadêmico e registrada como ativo de pesquisa aplicada da Holding AI-Native Encontro d'Água.
               </p>
 
               <div className="hero-actions">
@@ -247,7 +266,7 @@ export default function Home() {
 
               <div className="hero-status">
                 <span className="pulse-dot" />
-                <span>MVP acadêmico · escopo isolado · transparência por design</span>
+                <span>MVP funcional validado · deploy ativo · 6 cenários QA ✅</span>
               </div>
             </motion.div>
 
@@ -271,11 +290,11 @@ export default function Home() {
                 <ul>
                   <li><CheckCircle2 size={16} /> Fonte documental autorizada</li>
                   <li><CheckCircle2 size={16} /> Resposta com rastreabilidade</li>
-                  <li><CheckCircle2 size={16} /> Testes e limites visíveis</li>
+                  <li><CheckCircle2 size={16} /> 6 cenários QA validados</li>
                 </ul>
                 <div className="field-note-footer">
-                  <span>integração produtiva</span>
-                  <strong>proposta futura</strong>
+                  <span>deploy público</span>
+                  <strong>ativo ✅</strong>
                 </div>
               </motion.aside>
             </div>
@@ -307,20 +326,20 @@ export default function Home() {
           <div className="signal-intro">
             <SectionLabel>Dados de partida</SectionLabel>
             <h2>Métricas que distinguem fato, arquitetura e próxima validação.</h2>
-            <p>Os indicadores abaixo não simulam performance. Eles deixam explícito o que já foi catalogado, o que foi desenhado e o que ainda precisa ser medido no ambiente do agente.</p>
+            <p>Os indicadores abaixo não simulam performance. Eles deixam explícito o que já foi catalogado, o que foi desenhado e o que já foi medido no ambiente do agente.</p>
           </div>
           <div className="metric-grid">
             <article className="metric-card metric-card-strong">
                 <span className="metric-eyebrow">FONTE DE VERDADE / V2.1</span>
                 <strong>09</strong>
-                <p>documentos públicos versionados, organizados em duas camadas para a ingestão da Amazô.</p>
-                <span className="metric-proof">Catálogo disponível · ingestão pendente</span>
+                <p>documentos públicos versionados, ingeridos e ativos no RAG em produção.</p>
+                <span className="metric-proof">RAG ativo · Groq + OpenAI fallback</span>
             </article>
             <article className="metric-card">
-              <span className="metric-eyebrow">ARQUITETURA PROPOSTA</span>
-              <strong>4</strong>
-              <p>camadas de verdade: negócio, institucional, operacional e memória.</p>
-              <span className="metric-proof metric-proof-warm">Decisão arquitetural</span>
+              <span className="metric-eyebrow">CENÁRIOS QA VALIDADOS</span>
+              <strong>6</strong>
+              <p>testes executados em produção: identidade, catálogo, conceito, roteamento, guardrails e anti-jailbreak.</p>
+              <span className="metric-proof metric-proof-warm">✅ 100% validado</span>
             </article>
             <article className="metric-card">
               <span className="metric-eyebrow">DADO PROTEGIDO</span>
@@ -329,11 +348,11 @@ export default function Home() {
               <span className="metric-proof">Limite confirmado</span>
             </article>
             <article className="metric-card metric-card-method">
-              <span className="metric-eyebrow">PRÓXIMA MEDIÇÃO</span>
+              <span className="metric-eyebrow">STACK RESILIENTE</span>
               <div className="method-list">
-                <span>Groundedness</span><span>Recusa</span><span>Latência</span><span>Custo</span>
+                <span>Groq LPU</span><span>OpenAI fallback</span><span>MiniLM</span><span>TF-IDF</span>
               </div>
-              <p>Critérios de qualidade previstos para o ciclo de QA do agente.</p>
+              <p>3 tiers de LLM + embeddings híbridos garantem disponibilidade contínua.</p>
             </article>
           </div>
         </section>
@@ -388,7 +407,7 @@ export default function Home() {
               <SectionLabel>Catálogo e evidências</SectionLabel>
               <h2>O RAG só responde com o que foi autorizado.</h2>
             </div>
-            <p>Esta área registra o que já é fonte de verdade pública e o que ainda permanece pendente: ingestão, testes, prints e vídeo só entram após validação e aprovação de publicação.</p>
+            <p>Esta área registra o que já é fonte de verdade pública e as evidências capturadas: deploy em produção e bateria de 6 cenários QA validados em 23/08/2026.</p>
           </div>
 
           <div className="evidence-workbench">
@@ -418,7 +437,7 @@ export default function Home() {
               <aside className="evidence-audit-strip" aria-label="Índice de artefatos de validação">
                 <span>BASE / 09 documentos</span>
                 <span>REGRA / versão + responsável</span>
-                <span>RAG / ingestão pendente</span>
+                <span>RAG / 6 QA validados ✅</span>
               </aside>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -433,13 +452,14 @@ export default function Home() {
                   <activeEvidence.icon size={30} strokeWidth={1.5} />
                   <h3>{activeEvidence.title}</h3>
                   <p>{activeEvidence.description}</p>
+
                   {activeEvidence.id === "sources" && (
                     <>
                       <div className="rag-source-catalog" aria-label="Estrutura da fonte de verdade versão 2.1">
                         <div><span>CAMADA 01</span><strong>Atendimento público</strong><small>perfil, Hub, ofertas, canais e Amazô</small></div>
                         <div><span>CAMADA 02</span><strong>Complemento</strong><small>trajetória, FAQ, formação e portfólio</small></div>
                         <div><span>09 DOCS</span><strong>Fonte versionada</strong><small>data, responsável, status e visibilidade</small></div>
-                        <div><span>PRÓXIMO</span><strong>Ingestão RAG</strong><small>recuperação, citação, recusa e QA</small></div>
+                        <div><span>✅ DEPLOY</span><strong>RAG em produção</strong><small>amazo-guia-g10.streamlit.app · 3 tiers LLM · 6 QA</small></div>
                       </div>
                       <ul className="rag-source-scope" aria-label="Regras públicas das fontes do RAG">
                         <li><strong>Entra:</strong> somente documento aprovado, com versão, responsável e finalidade de resposta.</li>
@@ -447,19 +467,67 @@ export default function Home() {
                       </ul>
                     </>
                   )}
+
+                  {activeEvidence.id === "agent" && (
+                    <div className="evidence-screenshot-wrap">
+                      <img
+                        src={assets.deployScreenshot}
+                        alt="Deploy público da Amazô.guia — resposta com RAG ao vivo"
+                        className="evidence-screenshot-deploy"
+                      />
+                    </div>
+                  )}
+
+                  {activeEvidence.id === "tests" && (
+                    <div className="qa-scroll-wrapper">
+                      <div
+                        className="qa-scroll-container"
+                        ref={qaScrollRef}
+                        onScroll={handleQaScroll}
+                        aria-label="Bateria de QA — 6 cenários validados (rolável)"
+                      >
+                        <img
+                          src={assets.qaScreenshot}
+                          alt="Bateria de QA — 6 cenários validados em produção"
+                        />
+                      </div>
+                      <button
+                        className="qa-scroll-btn qa-scroll-up"
+                        onClick={() => scrollQA("up")}
+                        disabled={qaAtTop}
+                        aria-label="Rolar para cima"
+                        title="Rolar para cima"
+                      >
+                        &#8593;
+                      </button>
+                      <button
+                        className="qa-scroll-btn qa-scroll-down"
+                        onClick={() => scrollQA("down")}
+                        disabled={qaAtBottom}
+                        aria-label="Rolar para baixo"
+                        title="Rolar para baixo"
+                      >
+                        &#8595;
+                      </button>
+                    </div>
+                  )}
+
                   <div className="stage-status"><span />{activeEvidence.status}</div>
-                  <button className="stage-placeholder" type="button">
-                    <CirclePlay size={17} /> Área reservada para mídia aprovada
-                  </button>
+
+                  {activeEvidence.id === "video" && (
+                    <button className="stage-placeholder" type="button">
+                      <CirclePlay size={17} /> Área reservada para mídia aprovada
+                    </button>
+                  )}
                 </motion.div>
               </AnimatePresence>
               <aside className="evidence-method-artifact" aria-label="Registro de validação disponível">
                 <span>governança / rag</span>
-                <strong>Fonte de verdade</strong>
-                <p>Documentos permitidos, com dono, versão e finalidade de uso.</p>
-                <small>Próximo artefato: pergunta, fonte recuperada, citação e decisão de resposta.</small>
+                <strong>Evidências validadas</strong>
+                <p>Deploy público ativo e 6 cenários QA documentados em 23/08/2026.</p>
+                <small>Próximo artefato: vídeo de demonstração da sessão QA completa.</small>
               </aside>
-              <div className="evidence-crop-note"><CameraIcon /> print · vídeo · log de teste</div>
+              <div className="evidence-crop-note"><CameraIcon /> deploy · qa · print</div>
             </div>
           </div>
         </section>
@@ -494,19 +562,19 @@ export default function Home() {
               <h2>A Amazô cresce junto com uma trajetória que conecta comportamento, cuidado e engenharia.</h2>
             </div>
             <p>
-              Não é uma personagem solta em uma interface. Amazô representa digitalmente o Encontro d’Água Hub e carrega a intenção de tornar a tecnologia mais acessível, humana e regenerativa.
+              Não é uma personagem solta em uma interface. Amazô representa digitalmente o Encontro d'Água Hub e carrega a intenção de tornar a tecnologia mais acessível, humana e regenerativa.
             </p>
           </div>
 
           <div className="trajectory-composition">
             <figure className="amazo-portrait-card">
               <div className="portrait-frame">
-                <img src={assets.amazoHero} alt="Representação digital da Amazô, representante do Encontro d’Água Hub" />
+                <img src={assets.amazoHero} alt="Representação digital da Amazô, representante do Encontro d'Água Hub" />
               </div>
             </figure>
 
             <div className="trajectory-copy">
-              <p className="trajectory-identity">Lídi Moura · Arquiteta de Soluções, Especialista em Dados e IA e CEO do Hub Encontro d’Água.</p>
+              <p className="trajectory-identity">Lídi Moura · Arquiteta de Soluções, Especialista em Dados e IA e CEO do Hub Encontro d'Água.</p>
               <p>
                 Com formação em Psicologia e mais de uma década de experiência em Customer Success, Lídi construiu sua transição para tecnologia unindo comportamento humano, UX e desenvolvimento de software. O Hub nasce desse encontro: entender pessoas, organizar processos e transformar complexidade em soluções utilizáveis.
               </p>
@@ -609,8 +677,20 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
-        <div className="footer-brand"><span className="footer-avatar"><img src={assets.amazoHero} alt="" /></span><span>Amazô G10</span><span className="footer-hub-signature"><img src={assets.hubLogoTransparent} alt="Logotipo do Hub Encontro d’Água" /><span>Hub Encontro d’Água</span></span></div>
-        <p>Showcase em construção — evidências de execução serão adicionadas após curadoria.</p>
+        <div className="footer-brand">
+          <span className="footer-avatar"><img src={assets.amazoHero} alt="" /></span>
+          <span>Amazô G10</span>
+          <span className="footer-hub-signature">
+            <img src={assets.hubLogoTransparent} alt="Logotipo do Hub Encontro d'Água" />
+            <span>Hub Encontro d'Água</span>
+          </span>
+        </div>
+        <p>
+          MVP funcional validado — deploy público ativo em{" "}
+          <a href="https://amazo-guia-g10.streamlit.app/" target="_blank" rel="noreferrer">
+            amazo-guia-g10.streamlit.app
+          </a>.
+        </p>
         <span>© 2026</span>
       </footer>
     </div>
@@ -618,5 +698,5 @@ export default function Home() {
 }
 
 function CameraIcon() {
-  return <span className="camera-box" aria-hidden="true">▣</span>;
+  return <span className="camera-box" aria-hidden="true">&#9635;</span>;
 }
